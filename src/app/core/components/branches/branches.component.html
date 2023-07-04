@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">{{ 'branches' | translate }}</div>
+
+    <div class="row g-3">
+      <div *ngFor="let store of project.branches; let i = index" class="col-md-4 col-sm-6">
+        <div class="media-card align-items-center">
+          <div class="flex-shrink-0" [routerLink]="['/client/branches/' + store.Id]">
+            <div class="media-icon">
+              <span class="icon-pos"></span>
+            </div>
+          </div>
+          <div class="flex-grow-1 ms-3" [routerLink]="['/client/branches/' + store.Id]">
+            {{ store.projectNameAr }}
+          </div>
+          <div class="flex-shrink-0">
+            <div (click)="deleteBranch(store, i)" class="btn btn-danger delete-icon-btn">
+              <span class="icon-delete"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="media-card align-items-center add-new-item"
+          [routerLink]="[currentRole === 'ADMIN' ? '/admin/projects/' + project.projectId + '/add-branch' : '/client/projects/' + project.projectId + '/add-branch']">
+          <div class="flex-shrink-0">
+            <div class="media-icon">
+              <i class="icon-add"></i>
+            </div>
+          </div>
+          <div class="flex-grow-1 ms-3">
+            {{ 'client_pages.company_profile_page.add_new_branch' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

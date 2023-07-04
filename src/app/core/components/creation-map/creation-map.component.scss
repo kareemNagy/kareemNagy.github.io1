@@ -1,0 +1,11 @@
+:host::ng-deep {
+    position: relative;
+    .map-container {
+        width: 100% !important;
+        margin: 1.5rem 0;
+        border-radius: 0.75rem;
+    }
+    .cluster div {
+        color: #FFFFFF !important;
+    }
+}

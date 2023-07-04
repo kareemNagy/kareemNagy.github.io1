@@ -1,0 +1,33 @@
+<div class="card">
+    <div *ngIf="currentLookup.length > 0" class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">{{ "admin_pages.manage_lookups_page.classification_name" | translate }}</th>
+                    <th scope="col">{{ "global.actions" | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lookup of currentLookup">
+                    <td>
+                        <input type="text" class="form-control" (input)="updateLookup($event, lookup)"
+                            [ngModel]="lookup.NameAr? lookup.NameAr : lookup.Name_Ar" [disabled]="!lookup.editable" />
+                    </td>
+                    <td *ngIf="!lookup.editable">
+                        <div class="action-links">
+                            <a (click)="editLookUp(lookup)" class="action-link">{{ "global.edit" | translate }}</a>
+                            <a (click)="deleteLookUp(lookup)" class="action-link delete-link">{{ "global.delete" |
+                                translate }}</a>
+                        </div>
+                    </td>
+                    <td *ngIf="lookup.editable">
+                        <div class="action-links">
+                            <a (click)="saveChanges(lookup)" class="action-link">{{ "global.saveChanges" |
+                                translate}}</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

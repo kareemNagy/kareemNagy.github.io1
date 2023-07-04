@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">{{currentProject?.NameAr}}</div>
+        <app-company-request-info *ngIf="showCompanyInfo" [projectInfo]="currentProject"
+            [editable]="false"></app-company-request-info>
+        <app-products-request *ngIf="showProducts" [project]="currentProject" [editable]="false"></app-products-request>
+        <app-branches-request *ngIf="showBranches" [project]="currentProject" [editable]="false"></app-branches-request>
+        <app-attachments-request *ngIf="showAttachments" [projectInfo]="currentProject"
+            [editable]="false"></app-attachments-request>
+        <app-location-request *ngIf="showCompanyInfo" [project]="currentProject"
+            [editable]="false"></app-location-request>
+        <app-contacts-request *ngIf="showCompanyInfo" [projectInfo]="currentProject"
+            [editable]="false"></app-contacts-request>
+    </div>
+</div>
+<app-page-action-buttons [saveTitle]="'موافقة'"
+  (saveChanges)="approve()" (cancelChanges)="reject()"></app-page-action-buttons>

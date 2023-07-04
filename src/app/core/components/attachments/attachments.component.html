@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">{{ 'client_pages.company_profile_page.attachments' | translate }}</div>
+
+    <div class="row g-3">
+      <div *ngIf="currentRole !== 'VISITOR'">
+        <div class="col-sm-6" *ngFor="let attachment of attachmentList; let i =index">
+          <div class="media-card align-items-center">
+            <div class="flex-shrink-0">
+              <div class="media-icon">
+                <span class="icon-pdf"></span>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3" (click)="openAttachment(attachment.Url)">
+              {{ attachment.Name }}
+            </div>
+            <div class="flex-shrink-0">
+              <div class="btn btn-danger delete-icon-btn" (click)="deleteAttachment(attachment, i)">
+                <span class="icon-delete"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="currentRole !== 'VISITOR'" class="col-sm-6">
+        <input type="file" id="new-attachment" (change)="uploadFile($event)" />
+        <label for="new-attachment">
+          <div class="media-card align-items-center add-new-item">
+            <div class="flex-shrink-0">
+              <div class="media-icon">
+                <span class="icon-add"></span>
+              </div>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              {{ 'client_pages.company_profile_page.add_new_attachment' | translate }} ( {{
+              'client_pages.company_profile_page.attachment_requirements' | translate }} )
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

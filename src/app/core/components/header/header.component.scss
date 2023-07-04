@@ -1,0 +1,55 @@
+:host {
+  background: #163d61;
+  color: #FFFFFF;
+  height: 120px;
+  display: block;
+  // padding: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-wrapper {
+  color: #163d61;
+  background: #f6f7f9;
+  height: 120px;
+  padding: 1rem;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 85%;
+  }
+
+  .system-name {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+}
+
+.client-name {
+  margin: 0;
+}
+
+.header-menu {
+  margin: 0;
+
+  .list-inline-item {
+    border-inline-end: 1px solid #FFFFFF;
+    padding-inline: 15px;
+    margin: 0;
+
+    &:last-child {
+      border-inline-end: 0;
+    }
+  }
+
+  a {
+    padding: 5px;
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+}

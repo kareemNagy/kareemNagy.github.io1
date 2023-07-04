@@ -1,0 +1,38 @@
+<div class="row gx-0">
+  <div class="col-lg-2">
+    <div class="logo-wrapper">
+      <img [src]="'assets/images/logo_ar.svg'" [alt]="'logo'" />
+      <h6 class="system-name">{{'systemName' | translate}}</h6>
+    </div>
+  </div>
+  <div class="col-lg-10">
+    <div class="row align-items-center justify-content-between h-100 w-100">
+      <div class="col-auto">
+      </div>
+      <div class="col-auto">
+        <ul class="header-menu list-unstyled list-inline">
+          <li class="list-inline-item">
+            <a href="javascript:;"><span class="icon-notification"></span></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="javascript:;">
+              <span class="icon-user me-2"></span>
+              يوسف شعيب متيم المطلق
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <div class="d-flex">
+              <a href="javascript:;"><span class="icon-normal-text"></span></a>
+              <a href="javascript:;" (click)="increaseFontSize()"><span class="icon-maximize-text"></span></a>
+              <a href="javascript:;" (click)="decreaseFontSize()"><span class="icon-minimize-text"></span></a>
+              <a href="javascript:;" (click)="toggleTheme()"><span class="icon-eye"></span></a>
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <a href="javascript:;" (click)="toggleLanguage()"><span class="icon-globe"></span> {{currentLang == 'en' ? 'عربي' : 'EN'}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

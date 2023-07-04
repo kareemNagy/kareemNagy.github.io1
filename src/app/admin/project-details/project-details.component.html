@@ -1,0 +1,9 @@
+<div *ngIf="currentProject">
+    <app-company-info [projectInfo]="currentProject" [editable]="true"></app-company-info>
+    <app-activity [projectInfo]="currentProject" [editable]="true"></app-activity>
+    <app-products [project]="currentProject" [editable]="true"></app-products>
+    <app-branches [project]="currentProject" [editable]="true"></app-branches>
+    <app-attachments [projectInfo]="currentProject" [editable]="true"></app-attachments>
+    <app-location [project]="currentProject" [editable]="true"></app-location>
+    <app-contacts [projectInfo]="currentProject" [editable]="true"></app-contacts>
+</div>

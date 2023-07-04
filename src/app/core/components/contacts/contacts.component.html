@@ -1,0 +1,67 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <div class="row">
+                <div class="col">{{ 'client_pages.company_profile_page.contact_channels' | translate }}</div>
+                <div class="col text-end">
+                    <a class="edit-link" (click)="toggleEdit()">{{editable ? 'الغاء تعديل المعلومات' : 'تعديل المعلومات'
+                        }}</a>
+                </div>
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <div class="media-card align-items-center">
+                    <div class="flex-shrink-0">
+                        <div class="media-icon">
+                            <span class="icon-phone"></span>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <input [(ngModel)]="projectInfo.contactNumber" type="text" class="form-control"
+                            [disabled]="!editable" (ngModelChange)="updateProject()">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="media-card align-items-center">
+                    <div class="flex-shrink-0">
+                        <div class="media-icon">
+                            <span class="icon-earth"></span>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <input [(ngModel)]="projectInfo.siteUrl" type="text" class="form-control" [disabled]="!editable"
+                            (ngModelChange)="updateProject()">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="media-card align-items-center">
+                    <div class="flex-shrink-0">
+                        <div class="media-icon">
+                            <span class="icon-twitter"></span>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <input [(ngModel)]="projectInfo.twitter" type="text" class="form-control" [disabled]="!editable"
+                            (ngModelChange)="updateProject()">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="media-card align-items-center">
+                    <div class="flex-shrink-0">
+                        <div class="media-icon">
+                            <span class="icon-instagram"></span>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <input [(ngModel)]="projectInfo.instagram" type="text" class="form-control"
+                            [disabled]="!editable" (ngModelChange)="updateProject()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

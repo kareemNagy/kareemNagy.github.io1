@@ -1,0 +1,37 @@
+<div *ngIf="branchDetails">
+    <app-branch-info [branchInfo]="branchDetails"></app-branch-info>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">{{ 'admin_pages.pos_page.contacts' | translate }}</div>
+
+            <div class="mb-3">
+                <label class="form-label">{{ 'admin_pages.pos_page.contact_number' | translate }}</label>
+                <input [(ngModel)]="branchDetails.contactNumber" type="text" class="form-control"
+                    placeholder="{{ 'admin_pages.pos_page.contact_number_placeholder' | translate }}">
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">{{ 'delivery_options' | translate }}</div>
+
+            <div class="media-card align-items-center">
+                <div class="flex-grow-1">
+                    متاح مع برامج التوصيل
+                </div>
+                <div class="flex-shrink-0 ms-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" [checked]="branchDetails.isDeliverable" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">{{ 'global.available' | translate }}</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" [checked]="!branchDetails.isDeliverable" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">{{ 'global.not_available' | translate}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

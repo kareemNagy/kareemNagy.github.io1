@@ -1,0 +1,184 @@
+
+
+<div class="position-relative">
+    <div class="sidebar">
+        <div class="top-section">
+            <img class="logo" src="assets/images/logo-sdb-2030.svg" />
+            <div class="sidebar-toggle-btn" (click)="toggleSideBar()">
+                <i class="fas fa-{{isFilterDisplayed ? 'close':'filter'}}"></i>
+            </div>
+        </div>
+
+        <div class="sidebar-menu">
+            <div class="top-menu">
+                <h3 class="menu-group-title">تصفية</h3>
+                <a href class="sidebar-link " title="بحث متقدم"
+                    (click)="toggleFiltration($event,'advancedSearch')">
+                    <i class="fas fa-search"></i>
+                    <div
+                        class="{{isFilterDisplayed ? 'd-flex w-100 align-items-center justify-content-between':'d-none'}}">
+                        <span class="menu-text">بحث</span>
+
+                        <span
+                            class="collapse-icon  fas fa-chevron-{{advancedSearch ? 'up':'down'}}"></span>
+                    </div>
+                </a>
+                <div class="fliter-warp-content" *ngIf="advancedSearch">
+                    <div class="filter-section">
+                        <app-advanced-search
+                            (filteredBranchesUpdated)="updateFilteredBranches($event)"
+                            (districtSelected)="updateDistrict($event)"
+                            (citySelected)="updateCity($event)"
+                            (closeAdvancedSearch)="toggleAdvancedSearch()"></app-advanced-search>
+                    </div>
+                </div>
+
+                <a href class="sidebar-link" title="عرض المشريع"
+                    (click)="toggleFiltration($event,'projectsFiltration')">
+                    <i class="fas fa-display"></i>
+                    <div class="{{isFilterDisplayed ? ' d-flex w-100 align-items-center justify-content-between':'d-none'}}">
+                        <span  class="menu-text">عرض المشريع</span>
+                        <span class="collapse-icon  fas fa-chevron-{{projectsFiltration ? 'up':'down'}}"></span>
+                    </div>
+                </a>
+
+                <div class="fliter-warp-content" *ngIf="projectsFiltration">
+                    <div class="filter-section">
+                        <div class="position-relative">
+
+                            <div class="filter-dropdowns">
+                                <div>
+                                    <select
+                                        class="form-select statistics-interactive-map-select"
+                                        (change)="openFamiliesProjects($event, content)">
+                                        <option value selected disabled>اختر
+                                            مشاريع
+                                            الأسر
+                                            بالمنطقة</option>
+                                        <option
+                                            *ngFor="let district of districts"
+                                            [value]="district.nameAr">{{district.nameAr}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <ng-multiselect-dropdown
+                                    [placeholder]="'المنطقة'"
+                                    [settings]="citiesDropdownSettings"
+                                    [data]="districts"
+                                    (onSelect)="onDistrictSelect($event)"
+                                    (onDeSelect)="onDistrictDeSelect()"
+                                    [(ngModel)]="districtSelectedValues">
+                                </ng-multiselect-dropdown>
+                                <div>
+                                    <select
+                                        class="form-select statistics-interactive-map-select"
+                                        (change)="onDistrictStatisticsSelect($event)">
+                                        <option value selected disabled>اختر
+                                            احصائيات
+                                            المنطقة</option>
+                                        <option
+                                            *ngFor="let district of districts"
+                                            [value]="district.nameAr">{{district.nameAr}}
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <ng-multiselect-dropdown
+                                    [placeholder]="'نشاط المشروع'"
+                                    [settings]="activitySettings"
+                                    [data]="activities"
+                                    (onSelect)="onActivitySelect($event)"
+                                    (onDeSelect)="onActivityDeSelect($event)"
+                                    (click)="closeAdvancedSearch()"
+                                    [(ngModel)]="activitySelectedValues">
+                                </ng-multiselect-dropdown>
+
+                                <ng-multiselect-dropdown
+                                    [placeholder]="'المدينة'"
+                                    [settings]="citiesDropdownSettings"
+                                    [data]="cities"
+                                    (onSelect)="onCitySelect($event)"
+                                    [(ngModel)]="citySelectedValues">
+                                </ng-multiselect-dropdown>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <a href class="sidebar-link" title="احصائيات التمويل"
+                    (click)="toggleFiltration($event,'areaFiltration')">
+                    <i class="fas fa-coins"></i>
+                    <div class="{{isFilterDisplayed ? ' d-flex w-100 align-items-center justify-content-between':'d-none'}}">
+                        <span  class="menu-text">احصائيات التمويل</span>
+                        <span   class="collapse-icon fas fa-chevron-{{areaFiltration ? 'up':'down'}}"></span>
+                    </div>
+                </a>
+
+                <div class="fliter-warp-content" *ngIf="areaFiltration">
+                    <div class="filter-section">
+                        <div class="filter-dropdowns">
+
+                            <div>
+                              
+                                <select
+                                    class="form-select statistics-interactive-map-select"
+                                    (change)="onDistrictStatisticsSelect($event)">
+                                    <option value selected disabled>اختر احصائيات المنطقة  </option>
+                                    <option *ngFor="let district of districts"
+                                        [value]="district.nameAr">{{district.nameAr}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <app-map-statistics *ngIf="showStatistics" (closeStatistics)="closeStatistics()"
+                    [selectedDistrict]="selectedDistrictStatistics">
+                    </app-map-statistics>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="map-warp">
+        <app-maps  [branches]="filteredBranches"
+            [districtLocation]="districtLocation"
+            [cityLocation]="cityLocation"
+            [selectedDistrict]="selectedDistrictStatistics"></app-maps>
+    </div>
+
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">مشاريع الأسر المنتجة في
+            {{selectedFamilyDistrict}} </h4>
+        <button type="button" class="btn-close" aria-label="Close"
+            (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>المشاريع</th>
+                    <th>الحي</th>
+                    <th>النشاط</th>
+                    <th>التفاصيل</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>اسم المشروع</td>
+                    <td>حي الملز</td>
+                    <td>مقاهي وحلويات</td>
+                    <td>
+                        <a href="javascript:;" class="link">أظهر التفاصيل</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-template>

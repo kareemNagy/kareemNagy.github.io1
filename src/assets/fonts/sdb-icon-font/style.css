@@ -1,0 +1,165 @@
+@font-face {
+  font-family: 'sdb-icon-font';
+  src:  url('fonts/sdb-icon-font.eot?kwigc2');
+  src:  url('fonts/sdb-icon-font.eot?kwigc2#iefix') format('embedded-opentype'),
+    url('fonts/sdb-icon-font.ttf?kwigc2') format('truetype'),
+    url('fonts/sdb-icon-font.woff?kwigc2') format('woff'),
+    url('fonts/sdb-icon-font.svg?kwigc2#sdb-icon-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sdb-icon-font' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "\e900";
+}
+.icon-globe:before {
+  content: "\e901";
+}
+.icon-eye:before {
+  content: "\e902";
+}
+.icon-normal-text:before {
+  content: "\e903";
+}
+.icon-maximize-text:before {
+  content: "\e904";
+}
+.icon-minimize-text:before {
+  content: "\e905";
+}
+.icon-notification:before {
+  content: "\e906";
+}
+.icon-chevron-left:before {
+  content: "\e907";
+}
+.icon-chevron-right:before {
+  content: "\e908";
+}
+.icon-palette:before {
+  content: "\e909";
+}
+.icon-pos:before {
+  content: "\e90a";
+}
+.icon-add:before {
+  content: "\e90b";
+}
+.icon-earth:before {
+  content: "\e90c";
+}
+.icon-phone:before {
+  content: "\e90d";
+}
+.icon-send:before {
+  content: "\e90e";
+}
+.icon-facebook:before {
+  content: "\e90f";
+}
+.icon-twitter:before {
+  content: "\e910";
+}
+.icon-whatsapp:before {
+  content: "\e915";
+}
+.icon-instagram:before {
+  content: "\e911";
+}
+.icon-snapchat:before {
+  content: "\e912";
+}
+.icon-youtube:before {
+  content: "\e913";
+}
+.icon-pdf:before {
+  content: "\e914";
+}
+.icon-star:before {
+  content: "\e916";
+}
+.icon-star-o:before {
+  content: "\e917";
+}
+.icon-apple:before {
+  content: "\e918";
+}
+.icon-google-play:before {
+  content: "\e919";
+}
+.icon-huawei:before {
+  content: "\e91a";
+}
+.icon-location-marker:before {
+  content: "\e91b";
+}
+.icon-arrow-left:before {
+  content: "\e91c";
+}
+.icon-clock:before {
+  content: "\e91d";
+}
+.icon-sound-speaker:before {
+  content: "\e91e";
+}
+.icon-share:before {
+  content: "\e91f";
+}
+.icon-copy:before {
+  content: "\e920";
+}
+.icon-wholesaler:before {
+  content: "\e921";
+}
+.icon-technology:before {
+  content: "\e922";
+}
+.icon-service:before {
+  content: "\e923";
+}
+.icon-restaurant:before {
+  content: "\e924";
+}
+.icon-money:before {
+  content: "\e925";
+}
+.icon-medical:before {
+  content: "\e926";
+}
+.icon-industry:before {
+  content: "\e927";
+}
+.icon-entertainment:before {
+  content: "\e928";
+}
+.icon-cafe:before {
+  content: "\e929";
+}
+.icon-cafe-and-sweets:before {
+  content: "\e92a";
+}
+.icon-close:before {
+  content: "\e92b";
+}
+.icon-search:before {
+  content: "\e92c";
+}
+.icon-delete:before {
+  content: "\e92d";
+}

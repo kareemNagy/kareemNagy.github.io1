@@ -1,0 +1,182 @@
+:host {
+    width: 750px;
+    max-width: calc(100% - 2rem);
+    background: #FFFFFF;
+    box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);
+    border-radius: 1.5rem 1.5rem 0px 1.5rem;
+    padding: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.project-quick-view {
+
+    .close {
+        background: #FFFFFF;
+        box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);
+        display: inline-block;
+        padding: 1rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        text-decoration: none;
+        color: #000;
+        position: absolute;
+        top: -3.5rem;
+        right: 0;
+        cursor: pointer;
+    }
+
+    .category-icon {
+        font-size: 2.75rem;
+        background: #F6F7F9;
+        color: #1AAEC8;
+        border-radius: 7px;
+        border-end-end-radius: 0;
+        width: 4rem;
+        height: 4rem;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-inline-end: 1rem;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 1.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-inline-end: 0.5rem;
+        }
+    }
+
+
+
+    .project-name {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #17355A;
+        display: flex;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    .project-status {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 4px;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 0.8rem;
+        }
+
+        &-opened {
+            color: #3bb07f;
+            background: #ebf6f2;
+        }
+    }
+
+    .project-brief {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        color: #17355A;
+    }
+
+    .project-categories {
+        margin: 1rem 0;
+
+        .category-tag {
+            background: #F4F7F9;
+            color: #17355A;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 0.5rem;
+            margin-inline-end: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+    
+            &:last-child {
+                margin-inline-end: 0;
+            }
+
+
+            @media only screen and (max-width: 767px) {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .company-contact {
+        display: inline-flex;
+        border-radius: 8px;
+        color: #717D85;
+        font-size: 1rem;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 0.85rem;
+        }
+        // margin-inline-end: 2em;
+        
+        .media-icon {
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            padding: 5px;
+
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            background: #717D85;
+            color: #FFFFFF;
+
+            @media only screen and (max-width: 767px) {
+                width: 2rem;
+                height: 2rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        .contact-label {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #717D85;
+            margin-inline-end: 0.5rem;
+
+            @media only screen and (max-width: 767px) {
+                font-size: 1rem;
+            }
+        }
+        .contact-value,
+        .contact-value a {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #163d61;
+            text-decoration: none;
+
+            @media only screen and (max-width: 767px) {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .link {
+        color: #17355A;
+        font-weight: bold;
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        cursor: pointer;
+    }
+
+    .btn {
+        font-weight: bold;
+    }
+}

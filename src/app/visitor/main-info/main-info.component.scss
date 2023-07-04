@@ -1,0 +1,130 @@
+:host {
+    background: #FFFFFF;
+    display: block;
+    padding: 3rem 0;
+}
+
+.project-location {
+    font-size: 0.9rem;
+    color: #515A5F;;
+
+    [class*="icon-"] {
+        font-size: 1.25rem;
+        color: #19aec8;
+        margin-inline-end: 0.5rem;
+        vertical-align: middle;
+    }
+}
+.project-status {
+    padding: 0.5rem;
+    font-weight: 500;
+    border-radius: 4px;
+
+    &-opened {
+      color: #3bb07f;
+      background: #ebf6f2;
+    }
+}
+
+.company-name {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #163d61;
+}
+.company-brief {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #717D85;
+}
+.link-with-arrow {
+    margin: 1rem 0;
+    padding: 0.75rem 1.25rem;
+}
+
+
+.social-links {
+    list-style: none;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        margin-inline-end: 1rem;
+
+        a.social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: #19aec8;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    }
+}
+
+.company-contact {
+    display: inline-flex;
+    border-radius: 8px;
+    color: #717D85;
+    font-size: 1rem;
+    margin-inline-end: 2rem;
+    
+    .media-icon {
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 5px;
+
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        background: #717D85;
+        color: #FFFFFF;
+    }
+
+    .contact-label {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #717D85;
+        margin-inline-end: 0.5rem;
+    }
+    .contact-value,
+    .contact-value a {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #163d61;
+        text-decoration: none;
+    }
+}
+
+.last-updated-card {
+    background: #FFFFFF;
+    color: #717D85;
+    box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);
+    border-radius: 24px;
+    margin-top: 3rem;
+
+
+
+    [class*='icon-'] {
+        color: #163d61;
+        font-size: 1.25rem;
+        margin-inline-end: 1rem;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    .actions {
+        [class*='icon-'] {
+            &:last-child {
+                margin-inline-end: 0;
+            }
+        }
+    }
+}

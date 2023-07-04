@@ -1,0 +1,120 @@
+:host  {
+    footer {
+        padding: 2.5rem 0;
+        background: linear-gradient(180deg, rgba(238, 242, 243, 0) 0%, #EEF2F3 66.15%);;
+    }
+    .footer-logo {
+        width: 230px;
+        margin-bottom: 2rem;
+    }
+
+    .subscribe-form {
+        position: relative;
+
+        .form-label {
+            color: #163d61;
+        }
+
+        .subscribe-btn {
+            position: absolute;
+            bottom: 0.3rem;
+            right: 0.3rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            color: #FFFFFF;
+            background: #19aec8;
+            border-radius: 0.5rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            [class*="icon-"] {
+                transform: rotate(180deg);
+            }
+
+
+            [dir=rtl] & {
+                right: auto;
+                left: 0.3rem;
+            
+                [class*="icon-"] {
+                    transform: rotate(0deg);
+                }
+            }
+
+        }
+    }
+
+
+    .footer-links {
+        a {
+            color: #17355A;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            transition: 0.25s;
+
+            &:hover {
+                color: #A1B1C0;
+            }
+        }
+    }
+
+    .footer-title {
+        color: #163d61;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .download-app-links {
+        padding: 0;
+        list-style: none;
+        margin-bottom: 0;
+
+        li {
+            display: inline-block;
+            margin-inline-end: 0.75rem;
+
+            a.download-app-link {
+                font-size: 2rem;
+                color: #163d61;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .social-links {
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin-inline-end: 0.5rem;
+
+            a.social-link {
+                width: 1.75rem;
+                height: 1.75rem;
+                font-size: 0.9rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background: #19aec8;
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .copyrights {
+        color: #A1B1C0;
+        font-size: 0.9rem;
+
+        a {
+            color: #19aec8;
+            text-decoration: none;
+        }
+    }
+}

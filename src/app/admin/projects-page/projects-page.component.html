@@ -1,0 +1,68 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-6 col-sm-5 position-relative">
+                <span class="icon-search"></span>
+                <input type="text" class="form-control" (input)="searchProjects($event)"
+                    placeholder="{{ 'admin_pages.projects_page.search_input_placeholder' | translate }}">
+            </div>
+            <div class="col">
+                <select (change)="filterByActivities($event)" class="form-select">
+                    <option value="" disabled selected>{{ 'activity_classification' | translate }}</option>
+                    <option value="{{activity.Id}}" *ngFor="let activity of activities">{{activity.NameAr}}</option>
+                </select>
+            </div>
+            <div class="col">
+                <select (change)="filterByCategoryAndSetSubCategories($event)" class="form-select">
+                    <option value="" disabled selected>{{ 'main_activity' | translate }}</option>
+                    <option value="{{category.Id}}" *ngFor="let category of categories">{{category.Name_Ar}}</option>
+                </select>
+            </div>
+            <div class="col">
+                <select (change)="filterBySubCategory($event)" class="form-select" [disabled]="subCategoriesEnabled">
+                    <option value="" disabled selected>{{ 'sub_activity' | translate }}</option>
+                    <option value="{{subCategory.Id}}" *ngFor="let subCategory of subCategories">{{subCategory.Name_Ar}}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">{{ 'projects' | translate }}</div>
+        <div class="media-list">
+            <div *ngFor="let project of projects" class="media-list-item align-items-center">
+                <div class="flex-shrink-0 img-wrapper">
+                    <img [src]="project.logoUrl" [alt]="''" />
+                </div>
+                <div class="flex-grow-1 ms-3 project-name">
+                    {{project.nameAr}}
+                </div>
+                <a href="#" [routerLink]="['/admin/projects', project.projectId]" class="link flex-shrink-0">{{
+                    'global.view_details' | translate }}</a>
+            </div>
+        </div>
+
+        <!-- Pagination - Start -->
+        <div>
+            <ul class="pagination justify-content-center">
+                <li class="page-item page-item-prev" [ngClass]="{disabled: (currentPage == 1)}">
+                    <a class="page-link" (click)="previousPage()">
+                        <span class="icon-chevron-right"></span>
+                    </a>
+                </li>
+                <li *ngFor="let page of pages" class="page-item" [ngClass]="{active: page == currentPage}">
+                    <a class="page-link" (click)="selectPage(page)">{{page}}</a>
+                </li>
+                <li class="page-item page-item-next" [ngClass]="{disabled: (pages.length == currentPage)}">
+                    <a class="page-link" (click)="nextPage()">
+                        <span class="icon-chevron-left"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Pagination - End -->
+    </div>
+</div>

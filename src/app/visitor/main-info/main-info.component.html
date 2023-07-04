@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="row justify-content-between mb-3">
+        <div class="col-auto project-location">
+            <span class="icon-location-marker"></span> {{projectInfo?.destrict}}, {{projectInfo?.city}},
+            {{projectInfo?.neighborhood}}
+        </div>
+        <div class="col-auto">
+            <span class="project-status project-status-opened">حالة المشروع: {{projectInfo?.status}}</span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <h2 class="company-name">{{projectInfo?.nameAr}}</h2>
+            <p class="company-brief">{{projectInfo?.descriptionAr? projectInfo?.descriptionAr: projectInfo.description}}
+            </p>
+            <div>
+                <a [routerLink]="'/visitor/home'" class="btn btn-secondary">الاتجاه الى المشروع</a>
+                <a [routerLink]="'/visitor/home'" class="link-with-arrow">الخارطة التفاعلية</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img [src]="projectInfo?.logoUrl" class="w-100" alt="" />
+        </div>
+    </div>
+
+    <div>
+        <ul class="social-links">
+            <li>
+                <a href="#" class="social-link"><span class="icon-whatsapp"></span></a>
+            </li>
+            <li>
+                <a href="#" class="social-link"><span class="icon-instagram"></span></a>
+            </li>
+            <li>
+                <a href="#" class="social-link"><span class="icon-twitter"></span></a>
+            </li>
+        </ul>
+
+        <div>
+            <div class="align-items-center company-contact">
+                <div class="flex-shrink-0">
+                    <div class="media-icon">
+                        <span class="icon-phone"></span>
+                    </div>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                    <span class="contact-label">رقم التواصل</span>
+                    <span class="contact-value">{{projectInfo?.contactNumber}}</span>
+                </div>
+            </div>
+            <div class="align-items-center company-contact">
+                <div class="flex-shrink-0">
+                    <div class="media-icon">
+                        <span class="icon-earth"></span>
+                    </div>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                    <span class="contact-label">الموقع الالكتروني:</span>
+                    <span class="contact-value">
+                        <a href="https://www.piccolo.sa" target="_blank">{{projectInfo?.siteUrl}}</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card last-updated-card">
+            <div class="card-body">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-auto">
+                        <span class="icon-clock"></span>
+                        اخر تعديل 02 شعبان 1440
+                    </div>
+                    <div class="col-auto actions">
+                        <span class="icon-sound-speaker"></span>
+                        <span class="icon-share"></span>
+                        <span class="icon-copy"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

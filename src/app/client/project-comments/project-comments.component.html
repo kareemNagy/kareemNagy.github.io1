@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            {{'admin_pages.new_comments_page.comments' | translate}} <span
+                class="counter">({{comments.length}})</span>
+        </div>
+
+        <div class="media-list">
+            <div *ngFor="let comment of comments; let i = index" class="media-list-item align-items-center">
+                <div class="flex-shrink-0 img-wrapper">
+                    <img src="assets/images/kyan-cafe.png" [alt]="" class="commenter-img" />
+                </div>
+                <div class="flex-grow-1 ms-3 project-name">
+                    <h4 class="commenter-name">محمد أحمد</h4>
+                    <div class="comment-date">{{comment.CreatedDate | date}}</div>
+                    <div class="rating-stars rating-stars-{{comment.Rate}}">
+                        <span class="rating-star"></span>
+                        <span class="rating-star"></span>
+                        <span class="rating-star"></span>
+                        <span class="rating-star"></span>
+                        <span class="rating-star"></span>
+                    </div>
+                    <div class="comment">{{comment.ReviewComment}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">معلومات الشريك</div>
+        <div>
+            <div class="mb-3">
+                <label class="form-label">عنوان الشريك</label>
+                <input [(ngModel)]="newPartner.address" type="text" class="form-control">
+            </div>
+            <div class="partner-map">
+                <app-maps></app-maps>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">اسم الشريك</label>
+                <input [(ngModel)]="newPartner.nameAr" type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">{{ 'admin_pages.pos_page.contacts' | translate }}</div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ 'admin_pages.pos_page.contact_number' | translate }}</label>
+            <input [(ngModel)]="newPartner.phone" type="text" class="form-control"
+                placeholder="{{ 'admin_pages.pos_page.contact_number_placeholder' | translate }}">
+        </div>
+    </div>
+</div>
+<app-page-action-buttons (saveChanges)="saveChanges()" (cancelChanges)="cancelChanges()"></app-page-action-buttons>

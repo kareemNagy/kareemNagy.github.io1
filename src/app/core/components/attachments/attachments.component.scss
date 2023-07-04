@@ -1,0 +1,16 @@
+.media-card {
+    cursor: pointer;
+
+    .media-icon {
+        font-size: 2rem;
+    }
+}
+
+input[type=file] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}

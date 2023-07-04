@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">{{title}}</div>
+        <div>
+            <div class="mb-3">
+                <label class="form-label">{{addressTitle}}</label>
+                <input [(ngModel)]="partnerInfo.Address" type="text" class="form-control" [disabled]="!editable">
+            </div>
+            <div class="partner-map">
+                <app-maps [cityLocation]="partnerLocation"></app-maps>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">{{nameTitle}}</label>
+                <input [(ngModel)]="partnerInfo.NameAr" type="text" class="form-control" [disabled]="!editable">
+            </div>
+        </div>
+    </div>
+</div>

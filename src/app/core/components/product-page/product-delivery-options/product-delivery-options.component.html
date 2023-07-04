@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-body">
+
+        <div class="card-title">
+            <div class="row">
+                <div class="col">{{ 'delivery_options' | translate }}</div>
+                <div class="col text-end">
+                    <a class="edit-link">تعديل طرق التوصيل</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-card align-items-center">
+            <div class="flex-shrink-0">
+                <div class="media-icon">
+                    <i class="fa-regular fa-building"></i>
+                </div>
+            </div>
+            <div class="flex-grow-1 ms-3">
+                شركة ارامكس للشحن والتوصيل
+            </div>
+            <div class="flex-shrink-0 ms-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="option1" [checked]="product.CanDelivered" disabled>
+                    <label class="form-check-label" for="inlineRadio1">{{ 'global.available' | translate }}</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="option2" [checked]="!product.CanDelivered" disabled>
+                    <label class="form-check-label" for="inlineRadio2">{{ 'global.not_available' | translate }}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

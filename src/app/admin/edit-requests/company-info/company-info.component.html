@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">{{ 'client_pages.company_profile_page.main_info' | translate }}</div>
+
+    <div *ngIf="brochourList.length > 0" class="mb-4">
+      <label class="form-label">{{ 'client_pages.company_profile_page.project_images' | translate }}</label>
+      <div class="row">
+        <div *ngFor="let brochour of brochourList" class="col-md-4 col-sm-6">
+          <div class="project-img-wrapper" [class]="{deleted: brochour.DbRowState.NameEn == 'Deleted'}">
+            <img [src]="host + '/' + brochour.Url" [alt]="''" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="mb-3">
+        <label class="form-label">{{ 'client_pages.company_profile_page.project_name' | translate }}</label>
+        <input type="text" [value]="projectInfo.NameAr" class="form-control" disabled>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">{{ 'client_pages.company_profile_page.project_brief' | translate }}</label>
+        <input type="text" [(ngModel)]="projectInfo.DescriptionAr" (input)="updateDescription($event)"
+          class="form-control" disabled="">
+      </div>
+    </div>
+  </div>
+</div>

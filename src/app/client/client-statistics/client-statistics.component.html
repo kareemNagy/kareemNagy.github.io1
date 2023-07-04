@@ -1,0 +1,26 @@
+<div class="row gx-3">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="statistics-value">{{productCount}}</div>
+                <div class="statistics-title">عدد المنتجات</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="statistics-value">{{storeCount}}</div>
+                <div class="statistics-title">عدد منافذ البيع</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div [routerLink]="['/client/projects/'+ projectId + '/comments']" class="card cursor-mark">
+            <div class="card-body">
+                <div class="statistics-value">{{commentCount}}</div>
+                <div class="statistics-title">التعليقات</div>
+            </div>
+        </div>
+    </div>
+</div>

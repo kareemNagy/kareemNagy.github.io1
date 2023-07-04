@@ -1,0 +1,17 @@
+<div *ngIf="apiLoaded | async">
+ 
+  <google-map [options]="options">
+    <map-marker-clusterer  [minimumClusterSize]="clusterOptions.minimumClusterSize" [gridSize]="clusterOptions.gridSize" [styles]="clusterStyles" >
+      <map-marker *ngFor="let branch of branches" [options]="branch.animation == 1.0? {animation: branch.animation}: {}"
+        [position]="{ lat: branch.longitude, lng: branch.latitude }"
+        [icon]="{ url: 'assets/fonts/sdb-icon-font/fonts/' + branch.icon +'.png', scaledSize: size}"
+        (mapClick)="openInfoWindow(branch)"></map-marker>
+      <map-directions-renderer *ngIf="(directionsResults$ | async) as directionsResults"
+        [directions]="directionsResults"></map-directions-renderer>
+    </map-marker-clusterer>
+  </google-map>
+
+  <app-map-project-info *ngIf="showInfoWindow" (closeEvent)="closeInfoWindow()" (renderRoute)="routeToDirection($event)"
+    [branchInfo]="selectedBranch"></app-map-project-info>
+</div>
+

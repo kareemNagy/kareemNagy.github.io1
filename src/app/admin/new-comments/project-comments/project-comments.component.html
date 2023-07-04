@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="action-links">
+        <a (click)="approveSelectedComments()" class="action-link">قبول المحدد</a>
+        |
+        <a (click)="rejectSelectedComments()" class="action-link delete-link">رفض المحدد</a>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" style="width: 40px">
+                        <input class="form-check-input" type="checkbox" id="select_all" (click)="selectAllComments($event)">
+                    </th>
+                    <th scope="col">صاحب التعليق</th>
+                    <th scope="col">التقييم</th>
+                    <th scope="col">التعليق</th>
+                    <th scope="col">الاجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let comment of comments; let i = index">
+                    <td>
+                        <input class="form-check-input" type="checkbox" id="check_{{i}}" [(ngModel)]="comment.selected">
+                    </td>
+                    <td>احمد</td>
+                    <td>
+                        <div class="rating-stars rating-stars-{{comment.Rate}}">
+                            <span class="rating-star"></span>
+                            <span class="rating-star"></span>
+                            <span class="rating-star"></span>
+                            <span class="rating-star"></span>
+                            <span class="rating-star"></span>
+                        </div>
+                    </td>
+                    <td>{{comment.ReviewComment}}</td>
+                    <td>
+                        <div class="action-links">
+                            <a (click)="approveComment(comment, i)" class="action-link">{{ 'global.approve' | translate
+                                }}</a>
+                            <a (click)="rejectComment(comment, i)" class="action-link delete-link">{{ 'global.reject' |
+                                translate }}</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

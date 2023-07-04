@@ -1,0 +1,60 @@
+<div *ngIf="product" class="card">
+  <div class="card-body">
+
+    <div class="card-title">
+      <div class="row">
+        <div class="col">{{'client_pages.product_page.product_info' | translate }}</div>
+        <div class="col text-end">
+          <a class="edit-link">تعديل المعلومات</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="form-label">{{'client_pages.product_page.product_images' | translate }}</label>
+      <div class="row">
+        <div *ngFor="let attachment of product.Attachmentlst" class="col-md-3 col-sm-6">
+          <div class="product-img-wrapper">
+            <img [src]="host + '/' + attachment.Url" [alt]="'product'" />
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <input type="file" id="upload-photo" />
+          <label class="add-new-img" for="upload-photo">
+            <div class="wrapper">
+              <span class="icon-add"></span>
+              {{'global.add_new_image' | translate }}
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="row mb-3">
+        <div class="col">
+          <label class="form-label">{{'client_pages.product_page.product_name_arabic' | translate }}</label>
+          <input type="text" [(ngModel)]="product.nameAr" class="form-control" [disabled]="!editable" />
+        </div>
+        <div class="col" *ngIf="editable">
+          <label class="form-label">{{'client_pages.product_page.product_name_english' | translate }}</label>
+          <input type="text" [(ngModel)]="product.nameEn" class="form-control" [disabled]="!editable" />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col">
+          <label class="form-label">{{'client_pages.product_page.product_description_arabic' | translate }}</label>
+          <textarea [(ngModel)]="product.FullDescriptionAr" class="form-control" rows="5"
+            [disabled]="!editable"></textarea>
+        </div>
+        <div class="col" *ngIf="editable">
+          <label class="form-label">{{'client_pages.product_page.product_description_english' | translate }}</label>
+          <textarea [(ngModel)]="product.FullDescriptionEn" class="form-control" rows="5"
+            [disabled]="!editable"></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

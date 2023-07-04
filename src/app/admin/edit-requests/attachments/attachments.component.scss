@@ -1,0 +1,33 @@
+.media-card {
+    cursor: pointer;
+
+    .media-icon {
+        font-size: 2rem;
+    }
+    &.deleted {
+        img {
+          opacity: 0.3;
+        }
+  
+        &::after {
+          content: 'محذوف';
+          position: absolute;
+          background: #FF9999;
+          display: inline-block;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+          padding: 0.5rem 1rem;
+        }
+      }
+}
+
+input[type=file] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}

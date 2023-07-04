@@ -1,0 +1,20 @@
+<div *ngIf="editRequests.length > 0" class="card">
+    <div class="card-body">
+        <div class="card-title">{{'admin_pages.change_requests_page.change_requests' | translate}} <span
+                class="counter">({{editRequests.length}})</span></div>
+
+        <div class="media-list">
+            <div *ngFor="let request of editRequests" class="media-list-item align-items-center">
+                <div class="flex-shrink-0 img-wrapper">
+                    <img [src]="request.OriginalProject.LogoUrl" [alt]="" />
+                </div>
+                <div class="flex-grow-1 ms-3 project-name">
+                    {{request.OriginalProject.NameAr}}
+                </div>
+                <a [routerLink]="['/admin/requests/' + request.RelatedProjectVersionId]"
+                    class="link flex-shrink-0">{{'admin_pages.change_requests_page.view_changes' |
+                    translate}}</a>
+            </div>
+        </div>
+    </div>
+</div>

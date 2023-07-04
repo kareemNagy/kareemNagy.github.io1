@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">{{ 'admin_pages.manage_lookups_page.lists' | translate }}</div>
+        
+        <div class="media-list">
+            <div class="media-list-item align-items-center">
+                <div class="flex-grow-1 ms-3 list-name">
+                    {{ 'admin_pages.manage_lookups_page.classification_list' | translate }}
+                </div>
+                <a href="#" [routerLink]="['/admin/management/categories']" class="link flex-shrink-0">{{ 'global.view_details' | translate }}</a>
+            </div>
+
+            <div class="media-list-item align-items-center">
+                <div class="flex-grow-1 ms-3 list-name">
+                    {{ 'admin_pages.manage_lookups_page.subcategories_list' | translate }}
+                </div>
+                <a href="#" [routerLink]="['/admin/management/subcategories']" class="link flex-shrink-0">{{ 'global.view_details' | translate }}</a>
+            </div>
+
+            <div class="media-list-item align-items-center">
+                <div class="flex-grow-1 ms-3 list-name">
+                    {{ 'admin_pages.manage_lookups_page.activities_list' | translate }}
+                </div>
+                <a href="#" [routerLink]="['/admin/management/activities']" class="link flex-shrink-0">{{ 'global.view_details' | translate }}</a>
+            </div>
+        </div>
+    </div>
+</div>

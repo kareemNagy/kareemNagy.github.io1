@@ -1,0 +1,20 @@
+<div *ngIf="!showProjectComments" class="card">
+    <div class="card-body">
+        <div class="card-title">{{'admin_pages.new_comments_page.new_comments' | translate}} <span
+                class="counter">({{comments?.length}})</span></div>
+
+        <div *ngIf="projects.length > 0" class="media-list">
+            <div *ngFor="let project of projects" class="media-list-item align-items-center">
+                <div class="flex-shrink-0 img-wrapper">
+                    <img [src]="project.logoUrl" [alt]="" />
+                </div>
+                <div class="flex-grow-1 ms-3 project-name">
+                    {{project.nameAr}}<span class="counter"> ({{project.comments.length}})</span>
+                </div>
+                <a (click)="selectProject(project)"
+                    class="link flex-shrink-0">{{'admin_pages.new_comments_page.view_comments' | translate}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<app-project-comments *ngIf="showProjectComments" [comments]="selectedProject.comments"></app-project-comments>

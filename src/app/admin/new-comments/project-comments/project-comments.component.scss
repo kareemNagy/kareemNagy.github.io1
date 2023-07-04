@@ -1,0 +1,8 @@
+// @for $i from 1 through 5 {
+//     .rating-star:nth-child(5n + #{$i}) {
+//         color: yellow;
+//     }
+// }
+.action-links {
+    cursor: pointer;
+}

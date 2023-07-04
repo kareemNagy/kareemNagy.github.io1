@@ -1,0 +1,29 @@
+header {
+    background: #FFFFFF;
+    padding: 1rem 0;
+
+    nav.navbar {
+        padding: 0;
+
+        .navbar-brand {
+            img {
+                width: 248px;
+            }
+        }
+    
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    color: #A1B1C0;
+                    font-weight: bold;
+                    transition: 0.25s;
+    
+                    &.active,
+                    &:hover {
+                        color: #19aec8;
+                    }
+                }
+            }
+        }
+    }
+}

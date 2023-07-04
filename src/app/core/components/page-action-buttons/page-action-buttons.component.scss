@@ -1,0 +1,15 @@
+:host {
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 7px 15px rgba(0,0,0,0.1);
+    background: #FFFFFF;
+    padding: 15px;
+    z-index: 999;
+
+    .btn {
+        margin-inline-end: 1.5rem;
+    }
+}

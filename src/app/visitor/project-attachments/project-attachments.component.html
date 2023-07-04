@@ -1,0 +1,15 @@
+<div class="container">
+    <h2 class="section-title">المرفقات</h2>
+    <div *ngFor="let attachment of attachments">
+        <div class="attachment-name">
+            <span class="icon-pdf"></span>
+            {{attachment.Name? attachment.Name: attachment.nameAr}}
+        </div>
+        <div class="attachments-actions">
+            <a [href]="host + '/' + attachment.Url" target="_blank">
+                <span class="icon-eye"></span>
+                تحميل
+            </a>
+        </div>
+    </div>
+</div>

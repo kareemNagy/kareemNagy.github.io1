@@ -1,0 +1,26 @@
+.form-control,
+.form-select {
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+:host {
+    .icon-search {
+        position: absolute;
+        right: 1.25rem;
+        top: 0.9rem;
+        color: #CCCCCC;
+        font-size: 1.25rem;
+        
+        [dir="rtl"] & {
+            left: 1.25rem;
+            right: auto;
+            top: 0.9rem;
+        }
+    }
+}
+
+.project-name {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #163d61;
+}

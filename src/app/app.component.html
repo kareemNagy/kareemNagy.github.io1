@@ -1,0 +1,8 @@
+<div *ngIf="loggedIn">
+    <app-header *ngIf="currentRole !== 'VISITOR'"></app-header>
+    <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="!loggedIn" class="col-md-6 offset-md-3 mt-5">
+    <app-login (logged)="presistLogin()"></app-login>
+</div>

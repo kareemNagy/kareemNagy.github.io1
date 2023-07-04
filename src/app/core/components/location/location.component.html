@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">{{ 'client_pages.company_profile_page.company_location' | translate }}</div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ 'client_pages.company_profile_page.company_location_on_map' | translate
+                }}</label>
+            <input type="text" [(ngModel)]="location" class="form-control" />
+            <app-creation-map [lat]="project.latitude" [lng]="project.longitute"
+                (locationSet)="updateLocation($event)"></app-creation-map>
+        </div>
+    </div>
+</div>

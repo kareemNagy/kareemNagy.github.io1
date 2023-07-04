@@ -1,0 +1,43 @@
+aside {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  // background: #EEEEEE;
+  height: calc(100vh - 120px);
+}
+
+
+.side-menu {
+  background: #FFFFFF;
+  padding: 16px;
+  margin: 0;
+  height: 100%;
+  flex-grow: 1;
+  margin-bottom: 100px;
+  border-end-end-radius: 10px;
+  font-weight: 500;
+
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #163d61;
+      padding: 15px;
+      text-decoration: none;
+      display: block;
+      font-size: 1rem;
+
+      &.active {
+        background: #19aec8;
+        border-radius: 5px;
+        color: #FFFFFF;
+      }
+    }
+  }
+}

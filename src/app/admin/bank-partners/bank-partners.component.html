@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">{{ 'admin_pages.partners_page.bank_partner_stores' | translate }}</div>
+
+        <div class="row g-3">
+            <div *ngFor="let partner of bankPartners" class="col-md-4 col-sm-6">
+                <div class="media-card align-items-center" [routerLink]="['/admin/partners', partner.Id]">
+                    <div class="flex-shrink-0">
+                        <div class="media-icon">
+                            <span class="icon-pos"></span>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        {{partner.NameAr}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="media-card align-items-center add-new-item" [routerLink]="['/admin/add-partner']">
+                    <div class="flex-shrink-0">
+                        <div class="media-icon">
+                            <span class="icon-add"></span>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        {{ 'admin_pages.partners_page.add_new_partner' | translate }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+:host {
+  .project-img-wrapper {
+    padding: 0.5rem;
+    border-radius: 7px;
+    border: 1px solid #eef2f3;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    img {
+      width: 75%;
+      max-height: 150px;
+    }
+      
+    .delete-icon-btn {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+
+      [dir=ltr] & {
+        left: auto;
+        right: 0.5rem;
+      }
+    }
+  }
+
+  .add-new-img {
+    padding: 0.5rem;
+    border-radius: 7px;
+    border: solid 1px #eef2f3;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+      padding: 1rem;
+      border: 3px solid #eef2f3;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-add {
+      font-size: 3rem;
+      color: #a2b3be;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  input[type=file] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+}

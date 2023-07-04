@@ -1,0 +1,35 @@
+<div class="statistics-header">
+   
+    <h3 class="area-name">{{selectedDistrict.nameAr}}</h3>
+    <a (click)="open(statisticsDetails)">معلومات أكثر</a>
+    
+    
+</div>
+
+<div class="statistics-content">
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="statistics-value">{{selectedDistrict.totalLoans}}</div>
+            <div class="statistics-label">اجمالي عدد الممولين</div>
+        </div>
+        <div class="col">
+            <div class="statistics-value">{{selectedDistrict.totalExpenses}} ريال</div>
+            <div class="statistics-label">حجم التمويل الكلي</div>
+        </div>
+    </div>
+</div>
+<div class="statistics-footer d-flex justify-content-center mb-3">
+     <button (click)="closeInfoWindow()" class="btn btn-outline-secondary">
+        اغلاق
+    </button>
+</div>
+
+<ng-template #statisticsDetails let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{selectedDistrict.nameAr}}</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <app-map-statistics-details [region]="selectedDistrict.nameAr"></app-map-statistics-details>
+    </div>
+</ng-template>

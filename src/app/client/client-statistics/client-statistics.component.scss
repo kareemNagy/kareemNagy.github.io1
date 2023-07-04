@@ -1,0 +1,31 @@
+.card {
+    text-align: center;
+    font-weight: bold;
+    color: #163d61;
+
+    .statistics {
+        &-value {
+            font-size: 1.25rem;
+            background: #19aec8;
+            border-radius: 20px;
+            color: #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            height: 40px;
+            margin: auto;
+            margin-bottom: 0.5rem;
+            min-width: 40px;
+            padding: 0 0.5rem;
+        }
+
+        &-title {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.cursor-mark {
+    cursor: pointer;
+}

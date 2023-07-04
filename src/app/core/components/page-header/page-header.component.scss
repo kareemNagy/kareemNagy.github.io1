@@ -1,0 +1,56 @@
+.card {
+  &-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    
+    &:after {
+      content: inherit;
+    }
+  }
+
+  .project-status {
+    padding: 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+
+    &-opened {
+      color: #3bb07f;
+      background: #ebf6f2;
+    }
+  }
+}
+
+:host::ng-deep {
+  .breadcrumb {
+    font-weight: 500;
+    &-item {
+      font-size: 1rem;
+      color: #163d61;
+
+      &:not(:first-child)::before {
+        font-family: 'SDB-icon-font' !important;
+        content: "\e908";
+      }
+
+      [dir=rtl] &:not(:first-child)::before {
+        font-family: 'SDB-icon-font' !important;
+        content: "\e907";
+      }
+      
+      &:not(.active) {
+        color: #717D85;
+        
+        a {
+          text-decoration: none;
+          color: inherit;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

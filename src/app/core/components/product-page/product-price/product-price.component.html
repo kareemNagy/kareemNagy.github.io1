@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <div class="row">
+                <div class="col">{{'client_pages.product_page.product_price' | translate }}</div>
+                <div class="col text-end">
+                    <a class="edit-link">تعديل السعر</a>
+                </div>
+            </div>
+        </div>
+
+        <label class="form-label">{{'client_pages.product_page.main_product_price' | translate }}</label>
+
+        <div class="row g-3 gy-4">
+            <div class="col-sm-6">
+                <label class="form-label">{{'client_pages.product_page.unit_arabic' | translate }}</label>
+                <input [(ngModel)]="product.UnitAr" type="text" class="form-control"
+                    placeholder="{{'client_pages.product_page.unit_arabic_placeholder' | translate }}"
+                    [disabled]="!editable" />
+            </div>
+            <div class="col-sm-6" *ngIf="editable">
+                <label class="form-label">{{'client_pages.product_page.unit_english' | translate }}</label>
+                <input [(ngModel)]="product.Price" type="text" class="form-control"
+                    placeholder="{{'client_pages.product_page.unit_english_placeholder' | translate }}"
+                    [disabled]="!editable" />
+            </div>
+            <div class="col-sm-6">
+                <label class="form-label">{{'client_pages.product_page.price' | translate }}</label>
+                <input [(ngModel)]="product.Price" type="text" class="form-control"
+                    placeholder="{{'client_pages.product_page.price_placeholder' | translate }}"
+                    [disabled]="!editable" />
+            </div>
+        </div>
+
+    </div>
+</div>

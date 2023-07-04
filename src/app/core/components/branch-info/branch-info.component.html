@@ -1,0 +1,19 @@
+<div *ngIf="branchInfo" class="card">
+    <div class="card-body">
+        <div class="card-title">معلومات الفرع</div>
+        <div>
+            <div class="mb-3">
+                <label class="form-label">عنوان الفرع</label>
+                <input type="text" [(ngModel)]="branchInfo.longitude + ',' + branchInfo.latitude" class="form-control"
+                    [disabled]="!editable">
+            </div>
+            <div class="partner-map">
+                <app-creation-map [lat]="branchInfo.latitude" [lng]="branchInfo.longitude"></app-creation-map>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">اسم الفرع</label>
+                <input type="text" [(ngModel)]="branchInfo.projectNameAr" class="form-control" [disabled]="!editable">
+            </div>
+        </div>
+    </div>
+</div>

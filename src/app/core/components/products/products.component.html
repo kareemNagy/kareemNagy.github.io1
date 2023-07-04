@@ -1,0 +1,59 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <div class="card-title">
+          <div class="row">
+            <div class="col">
+              {{ 'client_pages.company_profile_page.project_products' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <div class="row">
+        <!-- <div *ngIf="currentRole === 'VISITOR'" class="col-md-3 col-sm-4">
+          <div class="product-container">
+            <div class="product-img-wrapper">
+              <img src="assets/images/product-img-01.png" alt=""/>
+            </div>
+            <h4 class="product-title">كابوتشينو</h4>
+          </div>
+        </div>
+        <div *ngIf="currentRole === 'VISITOR'" class="col-md-3 col-sm-4">
+          <div class="product-container">
+            <div class="product-img-wrapper">
+              <img src="assets/images/product-img-01.png" alt=""/>
+            </div>
+            <h4 class="product-title">كابوتشينو</h4>
+          </div>
+        </div> -->
+        <div *ngFor="let product of project.products; let i = index" class="col-md-3 col-sm-4">
+          <a class="box-link">
+            <div class="product-container">
+              <div class="product-img-wrapper">
+                <img [src]="host + '/' + product.Attachmentlst[0]?.Url" [alt]="''"  [routerLink]="['/client/products', product.Id]"/>
+                <button (click)="deleteProduct(product, i)" class="btn btn-danger delete-icon-btn">
+                  <span class="icon-delete"></span>
+                </button>
+              </div>
+              <h4 class="product-title">{{product.nameAr}}</h4>
+            </div>
+          </a>
+        </div>
+        <div *ngIf="currentRole !== 'VISITOR'" class="col-md-3 col-sm-4">
+          <div class="add-new-img"
+            [routerLink]="[currentRole === 'ADMIN' ? '/admin/projects/' + project.projectId + '/add-product' : '/client/projects/' + project.projectId + '/add-product']">
+            <div class="wrapper">
+              <span class="icon-add"></span>
+            </div>
+            <h4 class="product-title">{{ 'client_pages.company_profile_page.add_new_product' | translate }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

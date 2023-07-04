@@ -1,0 +1,62 @@
+:host {
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);
+    border-radius: 0.5rem;
+}
+
+.statistics {
+    
+    &-header {
+        padding: 9px 5px;
+        border-bottom: 1px solid #F0F0F0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #143b61;
+        .close {
+            background: #FFFFFF;
+            text-decoration: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        .area-name {
+            color: #fff;
+            font-size: 15px;
+            margin: 0;
+        }
+        a {
+                color: #fff;
+    text-decoration: underline;
+    font-size: 12px;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+    }
+        }
+    }
+
+    &-content {
+        padding: 1rem;
+        text-align: center;
+
+        .col {
+            border-inline-end: 1px solid #F0F0F0;
+
+            &:last-child {
+                border: 0;
+            }
+        }
+
+        .statistics-value {
+            color: #1AAEC8;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .statistics-label {
+            color: #163D61;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+    }
+}

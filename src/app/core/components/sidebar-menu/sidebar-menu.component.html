@@ -1,0 +1,7 @@
+<aside>
+  <ul class="side-menu">
+    <li *ngFor="let item of sidebarList">
+      <a [routerLink]="item.route" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{item.title | translate}}</a>
+    </li>
+  </ul>
+</aside>

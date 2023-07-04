@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-grow-1">
+        <div class="card-title">{{projectInfo.nameAr}}</div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
+            <li *ngFor="let path of currentPath" class="breadcrumb-item active" aria-current="page">{{path}}</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="flex-shrink-0 project-status project-status-opened ms-3">
+        {{ 'project_status' | translate }} : {{ projectInfo.status | translate }}
+      </div>
+    </div>
+  </div>
+</div>

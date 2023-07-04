@@ -1,0 +1,21 @@
+<div class="container">
+    <a (click)="save()" class="btn btn-primary">{{ saveTitle | translate }}</a>
+    <!-- <a (click)="open(confirmDeletion)" class="btn btn-outline-danger">{{ "global.delete" | translate }}</a> -->
+    <a (click)="cancel()" class="btn btn-outline-secondary">{{ cancelTitle | translate }}</a>
+</div>
+
+
+
+<ng-template #confirmDeletion let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">حذف الشريك</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body text-center">
+        <p>عزيزي منسوبي الادارة، سيتم حذف هذا الشريك ووقف التعاون معه</p>
+        <div>
+            <button class="btn btn-primary me-3">الغاء الأمر</button>
+            <button class="btn btn-outline-secondary">حذف الشريك</button>
+        </div>
+    </div>
+</ng-template>

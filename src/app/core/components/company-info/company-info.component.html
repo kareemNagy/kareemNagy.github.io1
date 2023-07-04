@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">{{ 'client_pages.company_profile_page.main_info' | translate }}</div>
+
+    <div class="mb-4">
+      <label class="form-label">{{ 'client_pages.company_profile_page.project_images' | translate }}</label>
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="project-img-wrapper">
+            <img [src]="projectInfo.logoUrl" [alt]="''" />
+            <button class="btn btn-danger delete-icon-btn">
+              <span class="icon-delete"></span>
+            </button>
+          </div>
+        </div>
+        <div *ngFor="let brochour of brochourList; let i = index" class="col-md-4 col-sm-6">
+          <div class="project-img-wrapper">
+            <img [src]="host + '/' + brochour.Url" [alt]="''" />
+            <button class="btn btn-danger delete-icon-btn" (click)="deleteAttachment(brochour, i)">
+              <span class="icon-delete"></span>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <input type="file" id="upload-photo" (change)="uploadFile($event)"
+            accept="image/png, image/jpeg, image/jpg" />
+          <label class="add-new-img" for="upload-photo">
+            <div class="wrapper">
+              <span class="icon-add"></span>
+              {{ 'global.add_new_image' | translate }}
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="mb-3">
+        <label class="form-label">{{ 'client_pages.company_profile_page.project_name' | translate }}</label>
+        <input type="text" [value]="projectInfo.nameAr" class="form-control" disabled>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">{{ 'client_pages.company_profile_page.project_brief' | translate }}</label>
+        <input type="text" [(ngModel)]="projectInfo.descriptionAr" (input)="updateDescription($event)"
+          class="form-control">
+      </div>
+    </div>
+  </div>
+</div>

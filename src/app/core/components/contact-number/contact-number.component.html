@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">{{ 'admin_pages.pos_page.contacts' | translate }}</div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ 'admin_pages.pos_page.contact_number' | translate }}</label>
+            <input [(ngModel)]="contactNumber" (ngModelChange)="setContactNumber($event)" type="text"
+                class="form-control" placeholder="{{ 'admin_pages.pos_page.contact_number_placeholder' | translate }}" [disabled]="!editable">
+        </div>
+    </div>
+</div>

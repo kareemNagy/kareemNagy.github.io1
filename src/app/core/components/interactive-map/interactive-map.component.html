@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-body position-relative p-0">
+        <app-maps [branches]="filteredBranches" [districtLocation]="districtLocation" [cityLocation]="cityLocation"
+            [selectedDistrict]="selectedDistrictStatistics"></app-maps>
+        <div class="filter-section">
+            <div class="container position-relative">
+                <div class="filter-dropdowns">
+                    <ng-multiselect-dropdown [placeholder]="'نشاط المشروع'" [settings]="activitySettings"
+                        [data]="activities" (onSelect)="onActivitySelect($event)"
+                        (onDeSelect)="onActivityDeSelect($event)" (click)="closeAdvancedSearch()"
+                        [(ngModel)]="activitySelectedValues">
+                    </ng-multiselect-dropdown>
+                    
+                    <ng-multiselect-dropdown [placeholder]="'المنطقة'" [settings]="citiesDropdownSettings"
+                        [data]="districts" (onSelect)="onDistrictSelect($event)" (onDeSelect)="onDistrictDeSelect()"
+                        [(ngModel)]="districtSelectedValues">
+                    </ng-multiselect-dropdown>
+                    
+                    <ng-multiselect-dropdown [placeholder]="'المدينة'" [settings]="citiesDropdownSettings"
+                        [data]="cities" (onSelect)="onCitySelect($event)" [(ngModel)]="citySelectedValues">
+                    </ng-multiselect-dropdown>
+                    
+                    <button class="btn advanced-search-btn" (click)="toggleAdvancedSearch()"
+                        [ngClass]="advancedSearch ? 'active' : ''">{{advancedSearch ?
+                        'إغلاق' : 'بحث متقدم'}}</button>
+                </div>
+
+                <app-advanced-search *ngIf="advancedSearch" (filteredBranchesUpdated)="updateFilteredBranches($event)"
+                    (districtSelected)="updateDistrict($event)" (citySelected)="updateCity($event)"
+                    (closeAdvancedSearch)="toggleAdvancedSearch()"></app-advanced-search>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">{{ 'activity_info' | translate }}</div>
+
+    <div class="row g-3 gy-4">
+      <div class="col-sm-6">
+        <label class="form-label">{{ 'activity_type' | translate }}</label>
+        <input class="form-control" [value]="'منشآت'" disabled />
+      </div>
+      <div class="col-sm-6">
+        <label class="form-label">{{ 'activity_classification' | translate }}</label>
+        <input class="form-control" [value]="projectInfo.activityAr" disabled />
+      </div>
+      <div class="col-sm-6">
+        <label class="form-label">{{ 'main_activity' | translate }}</label>
+        <input class="form-control" [value]="projectInfo.categoryAr" disabled />
+      </div>
+      <div class="col-sm-6">
+        <label class="form-label">{{ 'sub_activity' | translate }}</label>
+        <input class="form-control" [value]="projectInfo.subCategoryAr" disabled />
+      </div>
+    </div>
+  </div>
+</div>

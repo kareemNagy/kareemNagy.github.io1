@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <div class="card-title">
+          <div class="row">
+            <div class="col">
+              {{ 'client_pages.company_profile_page.project_products' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <div class="row">
+        <div *ngFor="let product of project.Products" class="col-md-3 col-sm-4">
+          <a class="box-link">
+            <div class="product-container">
+              <div class="product-img-wrapper">
+                <img [src]="host + '/' + product.Attachments[0]?.Url" [alt]="" />
+              </div>
+              <h4 class="product-title">{{product.NameAr}}</h4>
+              <p class="product-description">{{product.FullDescriptionAr}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div *ngIf="partnerInfo">
+    <app-partner-info [editable]="false" [title]="'معلومات الشريك'" [addressTitle]="'عنوان الشريك'"
+        [nameTitle]="'اسم الشريك'" [partnerInfo]="partnerInfo"></app-partner-info>
+    <app-contact-number [contactNumber]="partnerInfo.Phone" [editable]="false"></app-contact-number>
+</div>

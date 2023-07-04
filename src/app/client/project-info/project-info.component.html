@@ -1,0 +1,17 @@
+<div *ngIf="currentProject">
+  <app-page-header [projectInfo]="currentProject"></app-page-header>
+  <app-client-statistics [productCount]="currentProject.products.length" [storeCount]="currentProject.branches.length"
+    [commentCount]="currentProject.reviews.length" [projectId]="currentProject.projectId"></app-client-statistics>
+  <app-company-info [projectInfo]="currentProject" (descriptionChanged)="setDescription($event)"
+    [editable]="false"></app-company-info>
+  <app-activity [projectInfo]="currentProject" [editable]="false"></app-activity>
+  <app-products [project]="currentProject" [editable]="false"></app-products>
+  <app-branches [project]="currentProject" [editable]="false"></app-branches>
+  <app-attachments [projectInfo]="currentProject" [editable]="false"></app-attachments>
+  <app-location [project]="currentProject" (locationChange)="setLocation($event)"></app-location>
+  <app-contacts [projectInfo]="currentProject" [editable]="false" (contactsUpdated)="updateContacts()"></app-contacts>
+</div>
+<app-page-action-buttons *ngIf="showApprovalButtons" [saveTitle]="'ارسال الطلب للمراجعة'"
+  (saveChanges)="sendForApproval()" (cancelChanges)="cancel()"></app-page-action-buttons>
+<app-page-action-buttons *ngIf="showEditButtons" [saveTitle]="'حفظ التغييرات'" (saveChanges)="saveProjectInfo()"
+  (cancelChanges)="cancelEdit()"></app-page-action-buttons>

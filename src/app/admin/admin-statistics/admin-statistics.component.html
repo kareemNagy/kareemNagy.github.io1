@@ -1,0 +1,12 @@
+<div *ngIf="ready" class="row gx-3">
+    <div class="col-sm-4">
+        <app-statistics-card [title]="'عدد طلبات التعديل'" [value]="requestsNumber"></app-statistics-card>
+    </div>
+    <div class="col-sm-4">
+        <app-statistics-card [title]="'عدد المشاريع'" [value]="projectsNumber"></app-statistics-card>
+    </div>
+    <div class="col-sm-4">
+        <app-statistics-card [route]="'/admin/comments'" [title]="'التعليقات الجديدة'"
+            [value]="commentsNumber"></app-statistics-card>
+    </div>
+</div>
