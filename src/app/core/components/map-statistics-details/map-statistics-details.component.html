@@ -6,81 +6,112 @@
     <option value="3">...</option>
 </select> -->
 
-
 <div class="row justify-content-center">
-    <div class="col-xl-9">
-        <h4 class="individual-fund-title">تمويل الأفراد</h4>
+    <div class="col-xl-12">
+
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="fund-card">
                     <div class="card-content">
-                        <img src="assets/images/productive-families.svg" />
-                        <h5 class="title">تمويل الأسر المنتجة</h5>
-                        <div class="row">
-                            <div class="col-4 item-label">المستفيدين</div>
-                            <div class="col-8 item-value">{{regionStatistics.numberOfFamilyLoans}} مستفيد</div>
+                        <div class="start-side-content">
+                            <img src="assets/images/productive-families.svg" />
+                            <h4 class="individual-fund-title">تمويل الأفراد</h4>
                         </div>
-                        <div class="row">
-                            <div class="col-4 item-label">الاجمالي</div>
-                            <div class="col-8 item-value">{{regionStatistics.totalLoansForFamilies}} ريال</div>
+                        <div class="end-side-content">
+                            <h5 class="title">تمويل الأسر المنتجة</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="col-4 item-label">المستفيدين</div>
+                                <div class="col-8 item-value">{{regionStatistics.numberOfFamilyLoans}}
+                                    مستفيد</div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="col-4 item-label">الاجمالي</div>
+                                <div class="col-8 item-value">{{regionStatistics.totalLoansForFamilies}}
+                                    ريال</div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="fund-card">
                     <div class="card-content">
-                        <img src="assets/images/social-investment.svg" />
-                        <h5 class="title">القروض الاجتماعية</h5>
-                        <div class="row">
-                            <div class="col-4 item-label">المستفيدين</div>
-                            <div class="col-8 item-value">{{regionStatistics.numberOfSocialLoans}} مستفيد</div>
+                        <div class="start-side-content">
+                            <img src="assets/images/social-investment.svg" />
+                            <h4 class="individual-fund-title">تمويل الأفراد</h4>
                         </div>
-                        <div class="row">
-                            <div class="col-4 item-label">الاجمالي</div>
-                            <div class="col-8 item-value">{{regionStatistics.totalLoansForSocial}} ريال</div>
+                        <div class="end-side-content">
+
+                            <h5 class="title">القروض الاجتماعية</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="col-4 item-label">المستفيدين</div>
+                                <div class="col-8 item-value">{{regionStatistics.numberOfSocialLoans}}
+                                    مستفيد</div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="col-4 item-label">الاجمالي</div>
+                                <div class="col-8 item-value">{{regionStatistics.totalLoansForSocial}}
+                                    ريال</div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="fund-card">
                     <div class="card-content">
-                        <img src="assets/images/freelance.svg" />
-                        <h5 class="title">العمل الحر</h5>
-                        <div class="row">
-                            <div class="col-4 item-label">المستفيدين</div>
-                            <div class="col-8 item-value">{{regionStatistics.numberOfFreeLoans}} مستفيد</div>
+                        <div class="start-side-content">
+                            <img src="assets/images/freelance.svg" />
+                            <h4 class="individual-fund-title">تمويل الأفراد</h4>
                         </div>
-                        <div class="row">
-                            <div class="col-4 item-label">الاجمالي</div>
-                            <div class="col-8 item-value">{{regionStatistics.totalLoansForFree}} ريال</div>
+                        <div class="end-side-content">
+                            <h5 class="title">العمل الحر</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="col-4 item-label">المستفيدين</div>
+                                <div class="col-8 item-value">{{regionStatistics.numberOfFreeLoans}}
+                                    مستفيد</div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="col-4 item-label">الاجمالي</div>
+                                <div class="col-8 item-value">{{regionStatistics.totalLoansForFree}}
+                                    ريال</div>
+                            </div>
                         </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="fund-card corporate-fund-card">
+                    <div class="card-content">
+                        <div class="start-side-content">
+                            <img src="assets/images/corporate.svg" />
+                            <h4 class="corporate-fund-title">تمويل المنشآت</h4>
+                        </div>
+                        <div class="end-side-content">
+                            <h5 class="title">المنشآت</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="col-4 item-label">المستفيدين</div>
+                                <div class="col-8 item-value">{{regionStatistics.numberOfProjectsLoans}}
+                                    مستفيد</div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="col-4 item-label">الاجمالي</div>
+                                <div class="col-8 item-value">{{regionStatistics.totalLoansForProjects}}
+                                    ريال</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-xl-3 col-lg-4 corporate-section">
-        <h4 class="corporate-fund-title">تمويل المنشآت</h4>
-        <div class="fund-card corporate-fund-card">
-            <div class="card-content">
-                <img src="assets/images/corporate.svg" />
-                <h5 class="title">المنشآت</h5>
-                <div class="row">
-                    <div class="col-4 item-label">المستفيدين</div>
-                    <div class="col-8 item-value">{{regionStatistics.numberOfProjectsLoans}} مستفيد</div>
-                </div>
-                <div class="row">
-                    <div class="col-4 item-label">الاجمالي</div>
-                    <div class="col-8 item-value">{{regionStatistics.totalLoansForProjects}} ريال</div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="row justify-content-center mt-3">
@@ -91,7 +122,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- <div class="mb-5">
     <h4 class="section-title">تمويلات الأفراد</h4>
