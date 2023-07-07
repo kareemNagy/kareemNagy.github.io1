@@ -32,10 +32,8 @@ export class BranchService {
   }
 
   getAllBranches(): any[] {
-    console.log(Branches.branches)
-    console.log(Branches.branches.filter((x) =>x.district === "منطقة الرياض"))
     
-    return Branches.branches.filter((x) =>x.district === "منطقة الرياض");
+    return Branches.branches
   }
 
   getBranchesByActivities(activities: string[]): any[] {

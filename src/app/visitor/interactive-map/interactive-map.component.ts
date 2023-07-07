@@ -69,7 +69,7 @@ export class InteractiveMapComponent implements OnInit, AfterViewInit {
   projectsFiltration:boolean = false
   showStatistics = false;
   isFilterDisplayed = false
-  
+  areaFiltrationStatus = true
   constructor(
     private categoryService: CategoryService,
     private activityService: ActivityService,
@@ -261,8 +261,19 @@ export class InteractiveMapComponent implements OnInit, AfterViewInit {
   }
 
   onDistrictStatisticsSelect(district: any) {
-    this.onDistrictSelect({ nameAr:district.target.value})
+  //  this.onDistrictSelect({ nameAr:district.target.value})
     district = (district.target as HTMLInputElement).value;
+    let districtObject = this.districtService.getDistrictByName(district);
+    this.selectedDistrictStatistics = districtObject;
+    this.showStatistics = true
+  }
+
+  onDistrictStat(district: any) {
+    document.querySelector('.sidebar')?.classList.add('active')
+    this.isFilterDisplayed = true
+    this.areaFiltration = true
+    this.projectsFiltration = false
+    this.advancedSearch = false
     let districtObject = this.districtService.getDistrictByName(district);
     this.selectedDistrictStatistics = districtObject;
     this.showStatistics = true
@@ -306,13 +317,12 @@ export class InteractiveMapComponent implements OnInit, AfterViewInit {
         this.projectsFiltration = false
         this.advancedSearch = false
       }
+      this.areaFiltrationStatus = true
     } else if (type === 'advancedSearch') {
       if (this.advancedSearch == true) {
         this.advancedSearch = false
       }else {
         this.advancedSearch = true
-        this.areaFiltration = false
-        this.projectsFiltration = false
       }
     }
     else {
@@ -323,6 +333,7 @@ export class InteractiveMapComponent implements OnInit, AfterViewInit {
         this.areaFiltration = false
         this.advancedSearch = false
       }
+      this.areaFiltrationStatus = false
     }
   }
 

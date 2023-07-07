@@ -2,13 +2,16 @@ import { Size } from "./../../models/icon.model";
 import { HttpClient } from "@angular/common/http";
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
 } from "@angular/core";
 import { Observable, map, catchError, of } from "rxjs";
 import { MapDirectionsService } from "@angular/google-maps";
+import { DistrictService } from "../../services/district.service";
 
 @Component({
   selector: "app-maps",
@@ -20,7 +23,10 @@ export class MapsComponent implements OnInit, OnChanges {
   @Input() cityLocation: any = { lat: 24.742394, lng: 46.741473, zoom: 11.5 };
   @Input() districtLocation: any = { lat: 24.65, lng: 46.71, zoom: 2 };
   @Input() selectedDistrict: any;
+  @Input() areaFiltrationStatus!: boolean;
+  @Output() actionTaken = new EventEmitter();
   size: Size = new Size(30, 30);
+  topSize: Size = new Size(50, 50);
   apiLoaded: Observable<boolean>;
   showInfoWindow = false;
   selectedBranch: any;
@@ -29,7 +35,7 @@ export class MapsComponent implements OnInit, OnChanges {
   directionsResults$!: Observable<google.maps.DirectionsResult | undefined>;
   directionReady = false;
   showStatistics = false;
-
+  districts = this.districtService.getDistricts();
   KSA_BOUNDS = {
     north: 32.186356,
     south: 16.343458,
@@ -87,7 +93,8 @@ export class MapsComponent implements OnInit, OnChanges {
 
   constructor(
     private httpClient: HttpClient,
-    private mapDirectionsService: MapDirectionsService
+    private mapDirectionsService: MapDirectionsService,
+    private districtService: DistrictService
   ) {
     this.apiLoaded = httpClient
       .jsonp(
@@ -124,7 +131,7 @@ export class MapsComponent implements OnInit, OnChanges {
           },
           {
             featureType: "water",
-            stylers: [{ visibility: "off" }],
+            stylers: [{ visibility: "on" }],
           },
         ],
         restriction: {
@@ -150,7 +157,7 @@ export class MapsComponent implements OnInit, OnChanges {
           },
           {
             featureType: "water",
-            stylers: [{ visibility: "off" }],
+            stylers: [{ visibility: "on" }],
           },
         ],
         restriction: {
@@ -200,5 +207,9 @@ export class MapsComponent implements OnInit, OnChanges {
 
   closeStatistics() {
     this.showStatistics = false;
+  }
+
+  openDistrictsInfo(distric: any) {
+    this.actionTaken.emit(distric)
   }
 }

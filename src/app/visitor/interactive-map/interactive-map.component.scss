@@ -354,6 +354,14 @@
                         opacity: 0.6;
                     }
                 }
+                &.active {
+                    background: #143b61;
+                    color: #fff; 
+                    i, .collapse-icon {
+                        color: #fff;
+                    }
+                    
+                }
             }
         }
         .fliter-warp-content {

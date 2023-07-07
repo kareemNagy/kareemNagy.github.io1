@@ -11,29 +11,10 @@
 
         <div class="sidebar-menu">
             <div class="top-menu">
-                <h3 class="menu-group-title">تصفية</h3>
-                <a href class="sidebar-link " title="بحث متقدم"
-                    (click)="toggleFiltration($event,'advancedSearch')">
-                    <i class="fas fa-search"></i>
-                    <div
-                        class="{{isFilterDisplayed ? 'd-flex w-100 align-items-center justify-content-between':'d-none'}}">
-                        <span class="menu-text">بحث</span>
+                <h3 class="menu-group-title">القائمة</h3>
+               
 
-                        <span
-                            class="collapse-icon  fas fa-chevron-{{advancedSearch ? 'up':'down'}}"></span>
-                    </div>
-                </a>
-                <div class="fliter-warp-content" *ngIf="advancedSearch">
-                    <div class="filter-section">
-                        <app-advanced-search
-                            (filteredBranchesUpdated)="updateFilteredBranches($event)"
-                            (districtSelected)="updateDistrict($event)"
-                            (citySelected)="updateCity($event)"
-                            (closeAdvancedSearch)="toggleAdvancedSearch()"></app-advanced-search>
-                    </div>
-                </div>
-
-                <a href class="sidebar-link" title="عرض المشاريع"
+                <a href class="sidebar-link {{projectsFiltration ? 'active':''}}" title="عرض المشاريع"
                     (click)="toggleFiltration($event,'projectsFiltration')">
                     <i class="fas fa-display"></i>
                     <div class="{{isFilterDisplayed ? ' d-flex w-100 align-items-center justify-content-between':'d-none'}}">
@@ -105,9 +86,29 @@
 
                         </div>
                     </div>
+                     <a href class="sidebar-link {{advancedSearch?'active':''}}" title="بحث متقدم"
+                    (click)="toggleFiltration($event,'advancedSearch')">
+                    <i class="fas fa-search"></i>
+                    <div
+                        class="{{isFilterDisplayed ? 'd-flex w-100 align-items-center justify-content-between':'d-none'}}">
+                        <span class="menu-text"> بحث متقدم</span>
+
+                        <span
+                            class="collapse-icon  fas fa-chevron-{{advancedSearch ? 'up':'down'}}"></span>
+                    </div>
+                </a>
+                <div class="fliter-warp-content" *ngIf="advancedSearch">
+                    <div class="filter-section">
+                        <app-advanced-search
+                            (filteredBranchesUpdated)="updateFilteredBranches($event)"
+                            (districtSelected)="updateDistrict($event)"
+                            (citySelected)="updateCity($event)"
+                            (closeAdvancedSearch)="toggleAdvancedSearch()"></app-advanced-search>
+                    </div>
+                </div>
                 </div>
 
-                <a href class="sidebar-link" title="احصائيات التمويل"
+                <a href class="sidebar-link {{areaFiltration ? 'active':''}}" title="احصائيات التمويل"
                     (click)="toggleFiltration($event,'areaFiltration')">
                     <i class="fas fa-coins"></i>
                     <div class="{{isFilterDisplayed ? ' d-flex w-100 align-items-center justify-content-between':'d-none'}}">
@@ -119,9 +120,7 @@
                 <div class="fliter-warp-content" *ngIf="areaFiltration">
                     <div class="filter-section">
                         <div class="filter-dropdowns">
-
                             <div>
-                              
                                 <select
                                     class="form-select statistics-interactive-map-select"
                                     (change)="onDistrictStatisticsSelect($event)">
@@ -144,10 +143,13 @@
 
     </div>
     <div class="map-warp">
-        <app-maps  [branches]="filteredBranches"
+        <app-maps  [areaFiltrationStatus]="areaFiltrationStatus"
+            [branches]="filteredBranches"
             [districtLocation]="districtLocation"
             [cityLocation]="cityLocation"
-            [selectedDistrict]="selectedDistrictStatistics"></app-maps>
+            [selectedDistrict]="selectedDistrictStatistics"
+            (actionTaken)="onDistrictStat($event.nameAr)">
+        </app-maps>
     </div>
 
 </div>
